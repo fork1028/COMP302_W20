@@ -1,3 +1,8 @@
+(* loading the prelude...*)
+exception NotImplemented
+val remove : 'a * 'a list -> 'a list = <fun>
+
+
 (* Question 1. *)
 
 let common_tests = [

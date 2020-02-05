@@ -1,3 +1,12 @@
+(* loading the prelude...*)
+exception NotImplemented
+val close : float * float -> bool = <fun>
+val square : float -> float = <fun>
+val cube : float -> float = <fun>
+val odd : int -> bool = <fun>
+
+
+
 (* Q1 TODO: Correct these tests for the double function. *)
 let double_tests = [
   (0, 0);

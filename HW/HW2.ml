@@ -1,3 +1,8 @@
+(* loading the prelude...*)
+exception NotImplemented
+val sumlist : float list -> float = <fun>
+
+
 (* Q1a TODO: Write your own tests for the pairlists function.
          You should NOT test lists of different lengths.
 *)
