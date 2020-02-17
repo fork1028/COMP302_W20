@@ -23,6 +23,12 @@ let rec repeated (f,n) =
   if (n = 0) then fun x -> x
   else
   fun x -> f ((repeated (f,n-1)) x);;
+  
+(* Alternate solution *)
+let rec repeated (f,n) =
+  if (n = 0) then fun x -> x
+  else
+  fun x -> repeated (f,n-1)(f x);;
 
 
 # let inc n = n + 1;;
@@ -55,6 +61,17 @@ let square m =
 match m with
 | [] -> true
 | _ -> List.for_all (fun r -> (List.length m) = List.length r) m;;
+
+(* Alternate solution *)
+
+let square m =
+  let l = List.length m in
+    let rec helper mat = 
+      match mat with
+      | [] -> true
+      | first::rest -> if (List.length first) = l then helper rest
+                       else false
+in helper m;;
 
 (* Of course, there are many ways of doing this. *)
 
