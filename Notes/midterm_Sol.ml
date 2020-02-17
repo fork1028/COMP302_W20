@@ -4,7 +4,7 @@ non-negative integer n as arguments and returns the function that applies f, n t
 are some examples *)
 
 # let rec repeated (f,n) = .... <code removed>...
-val repeated : (’a -> ’a) * int -> ’a -> ’a = <fun>
+val repeated : ('a -> 'a) * int -> 'a -> 'a = <fun>
 # let inc n = n + 1;;
 val inc : int -> int = <fun>
 # repeated(inc, 5) 0;;
