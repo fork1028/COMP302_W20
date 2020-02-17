@@ -1,7 +1,8 @@
 (* Question 1[30 points]
 In this question you have to write a higher-order function that takes a function f and a
 non-negative integer n as arguments and returns the function that applies f, n times. Here
-are some examples
+are some examples *)
+
 # let rec repeated (f,n) = .... <code removed>...
 val repeated : (’a -> ’a) * int -> ’a -> ’a = <fun>
 # let inc n = n + 1;;
@@ -12,7 +13,8 @@ val inc : int -> int = <fun>
 val addfoo : string -> string = <fun>
 # repeated(addfoo, 3) "bar";;
 - : string = "foofoofoobar"
-The way the expressions are nested is crucial because it shows whether you have understood
+
+(* The way the expressions are nested is crucial because it shows whether you have understood
 the types. We will ruthlessly cut marks for improper nesting of expressions. *)
 
 (* Solution *)
@@ -23,21 +25,23 @@ let rec repeated (f,n) =
   fun x -> f ((repeated (f,n-1)) x);;
 
 
-(*  # let inc n = n + 1;;
+# let inc n = n + 1;;
 val inc : int -> int = <fun>
 # repeated(inc, 5) 0;;
 - : int = 5
 # let addfoo s = "foo" ^ s;;
 val addfoo : string -> string = <fun>
 # repeated(addfoo, 3) "bar";;
-- : string = "foofoofoobar" *)
+- : string = "foofoofoobar"
 
 
 (* Question 2[40 points]
-A matrix can be represented as a list of lists. For example we can write
+A matrix can be represented as a list of lists. For example we can write *)
+
 # let m1 = [[1;2;3];[4;5;6];[7;8;9]];;
 val m1 : int list list = [[1; 2; 3]; [4; 5; 6]; [7; 8; 9]]
-This represents the 3 × 3 matrix
+
+(* This represents the 3 × 3 matrix
 [1 2 3]
 [4 5 6]
 [7 8 9]
